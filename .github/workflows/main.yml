@@ -1,0 +1,15 @@
+name: Build
+
+on:
+  push:
+    tags:
+      - '*'
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    uses: pkghaus/action-debian-build/.github/workflows/build.yml@v1
+    secrets: inherit
